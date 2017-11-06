@@ -1,0 +1,125 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+<br />
+<h2>Listado de asignaturas</h2>
+<div>
+    <br />
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <form class="form-inline" asp-controller="Home" asp-action="Index" method="post">
+                <div class="form-group">
+                    <label class="sr-only" for="exampleInputAmount"></label>
+                    <div class="input-group">
+                        <div class="input-group-addon">FD</div>
+                        <input type="text" class="form-control" id="exampleInputAmount" placeholder="" name="Room">
+                    </div>
+                    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                </div>
+                
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            @if (ViewBag.Subjects != null)
+            {
+                <span style="color:darkred">Asignaturas <span class="badge">@ViewBag.TotalSubjects</span></span>
+            }
+            
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+    </div>
+    <br />
+    @if (ViewBag.Subjects != null && ViewBag.RoomNotFound == null && ViewBag.RoomNotDefined == null)
+    {
+        <table class="table table-responsive table-hover table-condensed">
+            <tr>
+                <th>Hora</th>
+                <th class="hidden-xs">Clave</th>
+                <th>Asignatura</th>
+                <th>Profesor/a</th>
+                <th>Día</th>
+                <th>Aula</th>
+            </tr>
+            @foreach(Subject s in ViewBag.Subjects)
+            {
+                <tr>
+                    <td>
+                        @s.InitDate / @s.FiniDate
+                    </td>
+                    <td class="hidden-xs">
+                        @s.KeyCode
+                    </td>
+                    <td>
+                        @s.Title
+                    </td>
+                    <td>
+                        @if (s.Teacher != null)
+                        {
+                            @s.Teacher.FullName
+
+                        }
+                        else
+                        {
+                            <div>Teacher is null</div>
+
+                        }
+                    </td>
+                    <td>
+                        @if (s.Day != null)
+                        {
+                            @s.Day.DayName
+
+                        }
+                        else
+                        {
+                            <div>Day is null</div>
+
+                        }
+                    </td>
+                    <td>
+                        @if(s.Room != null)
+                        {
+                            @s.Room.RoomName
+
+                        }
+                        else
+                        {
+                            <div>Teacher is null</div>
+
+                        }
+                    </td>
+                </tr>
+
+            }
+        </table>
+
+    }
+    @if(ViewBag.RoomNotDefined != null)
+    {
+        <div class="alert alert-danger">@ViewBag.RoomNotDefined</div>
+
+    }else if(ViewBag.RoomNotFound != null)
+    {
+        <div class="alert alert-danger">@ViewBag.RoomNotFound</div>
+
+    }
+
+    <!-- Mostrar aulas, con disponibilidad -->
+    <br />
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <!-- Aulas -->
+            
+
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+</div>
+

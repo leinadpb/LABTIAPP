@@ -1,0 +1,171 @@
+﻿
+@{
+    ViewData["Title"] = "Calendarios";
+}
+
+<h2>Calendarios</h2>
+<br />
+<div class="row">
+    <div class="col-md-2 boxRoom">
+        <form asp-controller="Home" asp-action="Schedule" method="post">
+            <input name="room" type="hidden" value="401" />
+            <button type="submit" class="btn btn-lg btn-block" style="background-color:@ViewData["FD401Color"];color:white;" align="center">FD401</button>
+        </form>
+    </div>
+    <div class="col-md-2 boxRoom">
+        <form asp-controller="Home" asp-action="Schedule" method="post">
+            <input name="room" type="hidden" value="402" />
+            <button type="submit" class="btn btn-lg btn-block" style="background-color:@ViewData["FD402Color"];color:white;" align="center">FD402</button>
+        </form>
+    </div>
+    <div class="col-md-2 boxRoom">
+        <form asp-controller="Home" asp-action="Schedule" method="post">
+            <input name="room" type="hidden" value="403" />
+            <button type="submit" class="btn btn-lg btn-block" style="background-color:@ViewData["FD403Color"];color:white;" align="center">FD403</button>
+        </form>
+    </div>
+    <div class="col-md-2 boxRoom">
+        <form asp-controller="Home" asp-action="Schedule" method="post">
+            <input name="room" type="hidden" value="404" />
+            <button type="submit" class="btn btn-lg btn-block" style="background-color:@ViewData["FD404Color"];color:white;" align="center">FD404</button>
+        </form>
+    </div>
+    <div class="col-md-2 boxRoom">
+        <form asp-controller="Home" asp-action="Schedule" method="post">
+            <input name="room" type="hidden" value="405" />
+            <button type="submit" class="btn btn-lg btn-block" style="background-color:@ViewData["FD405Color"];color:white;" align="center">FD405</button>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2 boxRoom">
+        <form asp-controller="Home" asp-action="Schedule" method="post">
+            <input name="room" type="hidden" value="411" />
+            <button type="submit" class="btn btn-lg btn-block" style="background-color:@ViewData["FD411Color"];color:white;" align="center">FD411</button>
+        </form>
+    </div>
+    <div class="col-md-2 boxRoom">
+        <form asp-controller="Home" asp-action="Schedule" method="post">
+            <input name="room" type="hidden" value="412" />
+            <button type="submit" class="btn btn-lg btn-block" style="background-color:@ViewData["FD412Color"];color:white;" align="center">FD412</button>
+        </form>
+    </div>
+    <div class="col-md-2 boxRoom">
+        <form asp-controller="Home" asp-action="Schedule" method="post">
+            <input name="room" type="hidden" value="413" />
+            <button type="submit" class="btn btn-lg btn-block" style="background-color:@ViewData["FD413Color"];color:white;" align="center">FD413</button>
+        </form>
+    </div>
+    <div class="col-md-2 boxRoom">
+        <form asp-controller="Home" asp-action="Schedule" method="post">
+            <input name="room" type="hidden" value="414" />
+            <button type="submit" class="btn btn-lg btn-block" style="background-color:@ViewData["FD414Color"];color:white;" align="center">FD414</button>
+        </form>
+    </div>
+    <div class="col-md-2 boxRoom">
+        <form asp-controller="Home" asp-action="Schedule" method="post">
+            <input name="room" type="hidden" value="415" />
+            <button type="submit" class="btn btn-lg btn-block" style="background-color:@ViewData["FD415Color"];color:white;" align="center">FD415</button>
+        </form>
+    </div>
+</div>
+<br />
+
+
+<!--
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <form class="form-inline" asp-controller="Home" asp-action="Schedule" method="post">
+            <div class="form-group">
+                <label class="sr-only" for="exampleInputAmount"></label>
+                <div class="input-group">
+                    <div class="input-group-addon">FD</div>
+                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="" name="Room">
+                </div>
+                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            </div>
+
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+-->
+<br />
+@{ 
+    //Variables
+    var subs = ViewBag.Subjects;
+}
+
+@if (ViewBag.SelectedRoom != null)
+{
+    <h1>Aula FD<span>@ViewBag.SelectedRoom</span></h1>
+}
+
+
+@if (ViewBag.Subjects != null)
+{
+
+    <table class="table table-responsive table-condensed table-hover table-striped table-bordered TableStyle" id="Schedule">
+        <tr>
+            <th><div align="center">Hora</div></th>
+            <th><div align="center">LUNES</div></th>
+            <th><div align="center">MARTES</div></th>
+            <th><div align="center">MIERCOLES</div></th>
+            <th><div align="center">JUEVES</div></th>
+            <th><div align="center">VIERNES</div></th>
+            <th><div align="center">SABADO</div></th>
+            <th><div align="center">DOMINGO</div></th>
+        </tr>
+        @{ 
+            bool CanPut = false;
+        }
+        @for (int Hour = 7; Hour <= 22; Hour++)
+        {
+            <tr>
+                <td><div align="center">@Hour</div></td>
+                
+                @for (int day = 0; day < 7; day++)
+                {
+                    @foreach (Subject s in ViewBag.Subjects)
+                    {
+                        if (s.Day.DayPosition == day)
+                        {
+                            if (Hour >= s.InitDate && Hour < s.FiniDate)
+                            {
+                                CanPut = true;
+                                <td style="background-color:@s.Color.Value;color:white;"><div align="center">@s.KeyCode</div></td>
+
+                            }
+
+                        }
+
+                    }
+                    @if (!CanPut)
+                    {
+                        <td></td>
+                    }
+
+                    CanPut = false;
+
+                }
+            </tr>
+        }
+
+    </table>
+
+}
+
+@section Scripts {
+
+    <script type="text/javascript">
+
+
+        
+
+    </script>
+}
+
+
+

@@ -1,0 +1,12 @@
+D:\WebApps\LABTIAPP\LABTIAPP\obj\Debug\netcoreapp2.0\LABTIAPP.csprojResolveAssemblyReference.cache
+D:\WebApps\LABTIAPP\LABTIAPP\obj\Debug\netcoreapp2.0\LABTIAPP.csproj.CoreCompileInputs.cache
+D:\WebApps\LABTIAPP\LABTIAPP\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+D:\WebApps\LABTIAPP\LABTIAPP\obj\Debug\netcoreapp2.0\LABTIAPP.AssemblyInfoInputs.cache
+D:\WebApps\LABTIAPP\LABTIAPP\obj\Debug\netcoreapp2.0\LABTIAPP.AssemblyInfo.cs
+D:\WebApps\LABTIAPP\LABTIAPP\bin\Debug\netcoreapp2.0\LABTIAPP.deps.json
+D:\WebApps\LABTIAPP\LABTIAPP\bin\Debug\netcoreapp2.0\LABTIAPP.runtimeconfig.json
+D:\WebApps\LABTIAPP\LABTIAPP\bin\Debug\netcoreapp2.0\LABTIAPP.runtimeconfig.dev.json
+D:\WebApps\LABTIAPP\LABTIAPP\bin\Debug\netcoreapp2.0\LABTIAPP.dll
+D:\WebApps\LABTIAPP\LABTIAPP\bin\Debug\netcoreapp2.0\LABTIAPP.pdb
+D:\WebApps\LABTIAPP\LABTIAPP\obj\Debug\netcoreapp2.0\LABTIAPP.dll
+D:\WebApps\LABTIAPP\LABTIAPP\obj\Debug\netcoreapp2.0\LABTIAPP.pdb

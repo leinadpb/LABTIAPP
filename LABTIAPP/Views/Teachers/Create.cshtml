@@ -1,0 +1,63 @@
+﻿@model LABTIAPP.Models.Teacher
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Teacher</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lastname" class="control-label"></label>
+                <input asp-for="Lastname" class="form-control" />
+                <span asp-validation-for="Lastname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Career" class="control-label"></label>
+                <input asp-for="Career" class="form-control" />
+                <span asp-validation-for="Career" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Master" class="control-label"></label>
+                <input asp-for="Master" class="form-control" />
+                <span asp-validation-for="Master" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Doctorade" class="control-label"></label>
+                <input asp-for="Doctorade" class="form-control" />
+                <span asp-validation-for="Doctorade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeCode" class="control-label"></label>
+                <input asp-for="EmployeeCode" class="form-control" />
+                <span asp-validation-for="EmployeeCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                
+                <input asp-for="FullName" class="form-control" type="hidden" value="DEFAULT" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

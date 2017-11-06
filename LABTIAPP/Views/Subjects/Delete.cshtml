@@ -1,0 +1,69 @@
+﻿@model LABTIAPP.Models.Subject
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar</h2>
+
+<h3>¿Está seguro/a de desea eliminar esta asignatura?</h3>
+<div>
+    <h4>Asignatura</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Hora inicio
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.InitDate)
+        </dd>
+        <dt>
+            Hora fin
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FiniDate)
+        </dd>
+        <dt>
+            Título
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+            Clave
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.KeyCode)
+        </dd>
+        <dt>
+            Color
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Color.ColorId)
+        </dd>
+        <dt>
+            Día
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Day.DayId)
+        </dd>
+        <dt>
+            Aula
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Room.RoomId)
+        </dd>
+        <dt>
+            Profesor/a
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Teacher.TeacherId)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="SubjectId" />
+        <input type="submit" value="Eliminar" class="btn btn-primary" /> |
+        <a asp-action="Index">◄ Ver todas las asignaturas</a>
+    </form>
+</div>

@@ -1,0 +1,77 @@
+﻿@model IEnumerable<LABTIAPP.Models.Subject>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Asignaturas</h2>
+
+<p>
+    <a asp-action="Create">Crear nueva</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    Hora inicio
+                </th>
+                <th>
+                    Hora Fin
+                </th>
+                <th>
+                    Asignatura
+                </th>
+                <th>
+                    Clave
+                </th>
+            <th>
+                Color
+            </th>
+            <th>
+                Día
+            </th>
+            <th>
+                Aula
+            </th>
+            <th>
+                Profesor/a
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InitDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FiniDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KeyCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day.DayName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Room.RoomName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Teacher.FullName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SubjectId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.SubjectId">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.SubjectId">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
