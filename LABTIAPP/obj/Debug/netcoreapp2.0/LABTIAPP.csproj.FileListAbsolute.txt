@@ -10,3 +10,15 @@ D:\WebApps\LABTIAPP\LABTIAPP\bin\Debug\netcoreapp2.0\LABTIAPP.dll
 D:\WebApps\LABTIAPP\LABTIAPP\bin\Debug\netcoreapp2.0\LABTIAPP.pdb
 D:\WebApps\LABTIAPP\LABTIAPP\obj\Debug\netcoreapp2.0\LABTIAPP.dll
 D:\WebApps\LABTIAPP\LABTIAPP\obj\Debug\netcoreapp2.0\LABTIAPP.pdb
+F:\WebApps\LABTIAPP\LABTIAPP\bin\Debug\netcoreapp2.0\LABTIAPP.deps.json
+F:\WebApps\LABTIAPP\LABTIAPP\bin\Debug\netcoreapp2.0\LABTIAPP.runtimeconfig.json
+F:\WebApps\LABTIAPP\LABTIAPP\bin\Debug\netcoreapp2.0\LABTIAPP.runtimeconfig.dev.json
+F:\WebApps\LABTIAPP\LABTIAPP\bin\Debug\netcoreapp2.0\LABTIAPP.dll
+F:\WebApps\LABTIAPP\LABTIAPP\bin\Debug\netcoreapp2.0\LABTIAPP.pdb
+F:\WebApps\LABTIAPP\LABTIAPP\obj\Debug\netcoreapp2.0\LABTIAPP.csprojResolveAssemblyReference.cache
+F:\WebApps\LABTIAPP\LABTIAPP\obj\Debug\netcoreapp2.0\LABTIAPP.csproj.CoreCompileInputs.cache
+F:\WebApps\LABTIAPP\LABTIAPP\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+F:\WebApps\LABTIAPP\LABTIAPP\obj\Debug\netcoreapp2.0\LABTIAPP.AssemblyInfoInputs.cache
+F:\WebApps\LABTIAPP\LABTIAPP\obj\Debug\netcoreapp2.0\LABTIAPP.AssemblyInfo.cs
+F:\WebApps\LABTIAPP\LABTIAPP\obj\Debug\netcoreapp2.0\LABTIAPP.dll
+F:\WebApps\LABTIAPP\LABTIAPP\obj\Debug\netcoreapp2.0\LABTIAPP.pdb

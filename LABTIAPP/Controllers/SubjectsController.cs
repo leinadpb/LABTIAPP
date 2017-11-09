@@ -102,7 +102,7 @@ namespace LABTIAPP.Controllers
                 //Verify theres is no conflict beetween a new subject
                 foreach (Subject s in _context.Subjects.Include(s => s.Day).Include(s => s.Room))
                 {
-                    if (DayId == s.Day.DayId && s.Room.RoomId == RoomId && (InitDate >= s.InitDate && InitDate <= s.FiniDate))
+                    if (DayId == s.Day.DayId && s.Room.RoomId == RoomId && (InitDate >= s.InitDate && InitDate < s.FiniDate))
                     {
                         AddSubject = false;
                         break;

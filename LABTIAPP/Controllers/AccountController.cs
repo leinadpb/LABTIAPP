@@ -47,7 +47,7 @@ namespace LABTIAPP.Controllers
             // Clear the existing external cookie to ensure a clean login process
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 
-            ViewData["ReturnUrl"] = returnUrl;
+            ViewData["ReturnUrl"] = "~/home/admin";
             return View();
         }
 

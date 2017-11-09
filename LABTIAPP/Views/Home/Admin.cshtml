@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Admin";
+}
+
+<h2>Admin</h2>
+<div>
+    <a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Ver mi perfil</a>
+    
+</div>
+<hr />
+<div class="row">
+
+    <div class="col-md-2 boxRoom">
+        <input name="room" type="hidden" value="401" />
+        <a href="~/subjects/index" class="btn btn-lg btn-block" style="background-color:darkred;color:white;" align="center">Asignaturas</a>
+    </div>
+    <div class="col-md-2 boxRoom">
+        <input name="room" type="hidden" value="401" />
+        <a href="~/teachers/index" class="btn btn-lg btn-block" style="background-color:darkred;color:white;" align="center">Profesores</a>
+    </div>
+    <div class="col-md-2 boxRoom">
+        <input name="room" type="hidden" value="401" />
+        <a href="~/rooms/index" class="btn btn-lg btn-block" style="background-color:darkred;color:white;" align="center">Aulas</a>
+    </div>
+    <div class="col-md-2 boxRoom">
+        <input name="room" type="hidden" value="401" />
+        <a href="~/colors/index" class="btn btn-lg btn-block" style="background-color:darkred;color:white;" align="center">Colores</a>
+    </div>
+    <div class="col-md-2 boxRoom">
+        <input name="room" type="hidden" value="401" />
+        <a href="~/days/index" class="btn btn-lg btn-block" style="background-color:darkred;color:white;" align="center">Días</a>
+    </div>
+</div>
+

@@ -8,11 +8,18 @@ using Microsoft.EntityFrameworkCore;
 using LABTIAPP.Models;
 using LABTIAPP.Data;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LABTIAPP.Controllers
 {
     public class HomeController : Controller
     {
+        string Red = "#410502";
+        string Empty = "#365768";
+        // string Yellow = "#702300";
+        string Green = "#003C01";
+        string[] Rooms = { "FD401", "FD402", "FD403", "FD404", "FD405", "FD411", "FD412", "FD413", "FD414", "FD415" };
+
         private readonly ApplicationDbContext _db;
 
         public HomeController(ApplicationDbContext db)
@@ -28,6 +35,11 @@ namespace LABTIAPP.Controllers
             return View();
         }
 
+        [Authorize]
+        public IActionResult Admin()
+        {
+            return View();
+        }
         [HttpPost]
         public async Task<IActionResult> Index(int room)
         {
@@ -53,11 +65,6 @@ namespace LABTIAPP.Controllers
         //Get
         public IActionResult Schedule()
         {
-            string Red = "#410502";
-            string Empty = "#365768";
-            // string Yellow = "#702300";
-            string Green = "#003C01";
-            string[] Rooms = { "FD401", "FD402", "FD403", "FD404", "FD405", "FD411", "FD412", "FD413", "FD414", "FD415" };
 
             var subs = _db.Subjects.Include(s => s.Day).Include(s => s.Room).Include(s => s.Color);
             
@@ -69,11 +76,14 @@ namespace LABTIAPP.Controllers
                 {
                     int h = DateTime.Now.Hour;
                     //int d = (int)DateTime.Now.DayOfWeek;
-                    int day = ((int)DateTime.Now.DayOfWeek == 0) ? 7 : (int)DateTime.Now.DayOfWeek; //Ln - 1 ..... Do - 7
+                    //int day = ((int)DateTime.Now.DayOfWeek == 0) ? 7 : (int)DateTime.Now.DayOfWeek; //Ln - 1 ..... Do - 7
+                    int day = (int)DateTime.Now.DayOfWeek; // Sunday - 0
+                    if (day == 0) day = 7;
 
-                    if ((h >= s.InitDate && h < s.FiniDate) && s.Day.DayId == day)
+                    if ((s.InitDate >= h && h <= s.FiniDate) && s.Day.DayPosition == day)
                     {
                         ViewData[r + "Color"] = Red;
+                        break;
                     }
                     else
                     {
@@ -92,11 +102,7 @@ namespace LABTIAPP.Controllers
         [HttpPost]
         public IActionResult Schedule(string room)
         {
-            string Red = "#410502";
-            string Empty = "#365768";
-            // string Yellow = "#702300";
-            string Green = "#003C01";
-            string[] Rooms = { "FD401", "FD402", "FD403", "FD404", "FD405", "FD411", "FD412", "FD413", "FD414", "FD415" };
+            
             ViewBag.SelectedRoom = room;
             var subs = _db.Subjects.Include(s => s.Day).Include(s => s.Room).Include(s => s.Color);
 
@@ -113,6 +119,7 @@ namespace LABTIAPP.Controllers
                     if ((s.InitDate >= h && h <= s.FiniDate) && s.Day.DayId == day)
                     {
                         ViewData[r + "Color"] = Red;
+                        break;
                     }
                     else
                     {
