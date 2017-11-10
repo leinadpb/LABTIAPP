@@ -5,6 +5,13 @@
     <UserSecretsId>aspnet-LABTIAPP-EB7D04AE-C946-447B-B295-DB714BBE20B8</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Properties\PublishProfiles\**" />
+    <Content Remove="Properties\PublishProfiles\**" />
+    <EmbeddedResource Remove="Properties\PublishProfiles\**" />
+    <None Remove="Properties\PublishProfiles\**" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />

@@ -80,7 +80,7 @@ namespace LABTIAPP.Controllers
                     int day = (int)DateTime.Now.DayOfWeek; // Sunday - 0
                     if (day == 0) day = 7;
 
-                    if ((s.InitDate >= h && h <= s.FiniDate) && s.Day.DayPosition == day)
+                    if ((h >= s.InitDate && h <= s.FiniDate) && s.Day.DayPosition == day)
                     {
                         ViewData[r + "Color"] = Red;
                         break;
@@ -116,7 +116,7 @@ namespace LABTIAPP.Controllers
                     //int d = (int)DateTime.Now.DayOfWeek;
                     int day = ((int)DateTime.Now.DayOfWeek == 0) ? 7 : (int)DateTime.Now.DayOfWeek; //Ln - 1 ..... Do - 7
 
-                    if ((s.InitDate >= h && h <= s.FiniDate) && s.Day.DayId == day)
+                    if ((h >= s.InitDate && h <= s.FiniDate) && s.Day.DayPosition == day)
                     {
                         ViewData[r + "Color"] = Red;
                         break;
