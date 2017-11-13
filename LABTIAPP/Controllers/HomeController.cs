@@ -67,20 +67,65 @@ namespace LABTIAPP.Controllers
         {
 
             var subs = _db.Subjects.Include(s => s.Day).Include(s => s.Room).Include(s => s.Color);
-            
+            int h = DateTime.Now.Hour;
+            DateTime MidDay = DateTime.Parse("12:00 PM");
+
+            //int d = (int)DateTime.Now.DayOfWeek;
+            //int day = ((int)DateTime.Now.DayOfWeek == 0) ? 7 : (int)DateTime.Now.DayOfWeek; //Ln - 1 ..... Do - 7
+            int day = (int)DateTime.Now.DayOfWeek; // Sunday - 0
+            if (day == 0) day = 7;
+            DateTime date = DateTime.Now;
+            ViewBag.TodayDate = string.Format("{0:f}", date);
+
+            if(DateTime.Now > MidDay)
+            {
+                switch (h)
+                {
+                    case 1:
+                        h = 13;
+                        break;
+                    case 2:
+                        h = 14;
+                        break;
+                    case 3:
+                        h = 15;
+                        break;
+                    case 4:
+                        h = 16;
+                        break;
+                    case 5:
+                        h = 17;
+                        break;
+                    case 6:
+                        h = 18;
+                        break;
+                    case 7:
+                        h = 19;
+                        break;
+                    case 8:
+                        h = 20;
+                        break;
+                    case 9:
+                        h = 21;
+                        break;
+                    case 10:
+                        h = 22;
+                        break;
+                    case 11:
+                        h = 23;
+                        break;
+                }
+            }
+
             foreach (string r in Rooms)
             {
                 var subjects = subs.Where(s => s.Room.RoomName.Equals(r));
 
                 foreach (Subject s in subjects)
                 {
-                    int h = DateTime.Now.Hour;
-                    //int d = (int)DateTime.Now.DayOfWeek;
-                    //int day = ((int)DateTime.Now.DayOfWeek == 0) ? 7 : (int)DateTime.Now.DayOfWeek; //Ln - 1 ..... Do - 7
-                    int day = (int)DateTime.Now.DayOfWeek; // Sunday - 0
-                    if (day == 0) day = 7;
+                    
 
-                    if ((h >= s.InitDate && h <= s.FiniDate) && s.Day.DayPosition == day)
+                    if ((h >= s.InitDate && h < s.FiniDate) && s.Day.DayPosition == day)
                     {
                         ViewData[r + "Color"] = Red;
                         break;
@@ -105,6 +150,53 @@ namespace LABTIAPP.Controllers
             
             ViewBag.SelectedRoom = room;
             var subs = _db.Subjects.Include(s => s.Day).Include(s => s.Room).Include(s => s.Color);
+            DateTime MidDay = DateTime.Parse("12:00 PM");
+
+            int h = DateTime.Now.Hour;
+            int day = (int)DateTime.Now.DayOfWeek; // Sunday - 0
+            if (day == 0) day = 7;
+            DateTime date = DateTime.Now;
+            ViewBag.TodayDate = string.Format("{0:f}", date);
+
+            if (DateTime.Now > MidDay)
+            {
+                switch (h)
+                {
+                    case 1:
+                        h = 13;
+                        break;
+                    case 2:
+                        h = 14;
+                        break;
+                    case 3:
+                        h = 15;
+                        break;
+                    case 4:
+                        h = 16;
+                        break;
+                    case 5:
+                        h = 17;
+                        break;
+                    case 6:
+                        h = 18;
+                        break;
+                    case 7:
+                        h = 19;
+                        break;
+                    case 8:
+                        h = 20;
+                        break;
+                    case 9:
+                        h = 21;
+                        break;
+                    case 10:
+                        h = 22;
+                        break;
+                    case 11:
+                        h = 23;
+                        break;
+                }
+            }
 
             foreach (string r in Rooms)
             {
@@ -112,11 +204,8 @@ namespace LABTIAPP.Controllers
 
                 foreach (Subject s in subjects)
                 {
-                    int h = DateTime.Now.Hour;
-                    //int d = (int)DateTime.Now.DayOfWeek;
-                    int day = ((int)DateTime.Now.DayOfWeek == 0) ? 7 : (int)DateTime.Now.DayOfWeek; //Ln - 1 ..... Do - 7
-
-                    if ((h >= s.InitDate && h <= s.FiniDate) && s.Day.DayPosition == day)
+                    
+                    if ((h >= s.InitDate && h < s.FiniDate) && s.Day.DayPosition == day)
                     {
                         ViewData[r + "Color"] = Red;
                         break;

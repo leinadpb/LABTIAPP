@@ -55,7 +55,9 @@
                 @Html.DisplayFor(modelItem => item.KeyCode)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Color.Name)
+                <div style="background-color:@item.Color.Value;">
+                    @Html.DisplayFor(modelItem => item.Color.Name)
+                </div>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Day.DayName)

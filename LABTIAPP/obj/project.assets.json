@@ -13116,7 +13116,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LEINAD\\.nuget\\packages\\": {},
+    "C:\\Users\\daniel.pena\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -13125,17 +13125,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "F:\\WebApps\\LABTIAPP\\LABTIAPP\\LABTIAPP.csproj",
+      "projectUniqueName": "C:\\WebApps\\LABTIAPP\\LABTIAPP\\LABTIAPP.csproj",
       "projectName": "LABTIAPP",
-      "projectPath": "F:\\WebApps\\LABTIAPP\\LABTIAPP\\LABTIAPP.csproj",
-      "packagesPath": "C:\\Users\\LEINAD\\.nuget\\packages\\",
-      "outputPath": "F:\\WebApps\\LABTIAPP\\LABTIAPP\\obj\\",
+      "projectPath": "C:\\WebApps\\LABTIAPP\\LABTIAPP\\LABTIAPP.csproj",
+      "packagesPath": "C:\\Users\\daniel.pena\\.nuget\\packages\\",
+      "outputPath": "C:\\WebApps\\LABTIAPP\\LABTIAPP\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\LEINAD\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\daniel.pena\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

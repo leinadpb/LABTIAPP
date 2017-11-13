@@ -25,7 +25,9 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Value)
+                <div style="background-color:@item.Value;">
+                    @Html.DisplayFor(modelItem => item.Value)
+                </div>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
