@@ -1,6 +1,3 @@
 # LABTI APP - INTEC # 
 <br />
----
-<br/>
-** App location:**
-* labtiapp.azurewebsites.net *
+App location: labtiapp.azurewebsites.net
