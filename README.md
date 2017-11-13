@@ -1,2 +1,3 @@
-**LABTI APP - INTEC**
-*url: labtiapp.azurewebsites.net*
+#LABTI APP - INTEC 
+<br />
+labtiapp.azurewebsites.net - automatic!
